@@ -62,7 +62,7 @@ abline(weighty)
 summary.lm(weighty)
 ```
 
-The adjusted r-squared fo this model (CHEST) is .79; the model for NECK had an adjusted R-squared of .75. 
+The adjusted r-squared fo this model (WEIGHT) is .74, which is less than the .75 of neck.
 So far, the best model is the one based on the CHEST measurements.
 
 ```{r}
@@ -72,42 +72,23 @@ predict(weighty,new,se.fit=TRUE)
 ```
 
 
-### LENGTH
-
-
-```{r}
-chesty <- lm(LENGTH~CHEST,data=bears)
-plot(LENGTH~CHEST,data=bears)
-abline(chesty)
-summary.lm(chesty)
-```
-
-The adjusted r-squared fo this model (CHEST) is .79; the model for NECK had an adjusted R-squared of .75. 
-So far, the best model is the one based on the CHEST measurements.
-
-```{r}
-new <- data.frame(CHEST=c(17,22,26))
-predict(chesty,new)
-predict(chesty,new,se.fit=TRUE)
-```
-
 ### HEADWTH
 
 
 ```{r}
-chesty <- lm(LENGTH~CHEST,data=bears)
-plot(LENGTH~CHEST,data=bears)
-abline(chesty)
-summary.lm(chesty)
+headwdthy <- lm(LENGTH~HEADWTH,data=bears)
+plot(LENGTH~HEADWTH,data=bears)
+abline(headwdthy)
+summary.lm(headwdthy)
 ```
 
-The adjusted r-squared fo this model (CHEST) is .79; the model for NECK had an adjusted R-squared of .75. 
+The adjusted r-squared fo this model (HEADWTH) is .73, less than .75 from the neck.
 So far, the best model is the one based on the CHEST measurements.
 
 ```{r}
-new <- data.frame(CHEST=c(17,22,26))
-predict(chesty,new)
-predict(chesty,new,se.fit=TRUE)
+new <- data.frame(HEADWTH=c(17,22,26))
+predict(headwdthy,new)
+predict(headwdthy,new,se.fit=TRUE)
 ```
 
 
@@ -115,19 +96,19 @@ predict(chesty,new,se.fit=TRUE)
 
 
 ```{r}
-chesty <- lm(LENGTH~CHEST,data=bears)
-plot(LENGTH~CHEST,data=bears)
-abline(chesty)
-summary.lm(chesty)
+healdeny <- lm(LENGTH~HEADLEN,data=bears)
+plot(LENGTH~HEADLEN,data=bears)
+abline(healdeny)
+summary.lm(healdeny)
 ```
 
-The adjusted r-squared fo this model (CHEST) is .79; the model for NECK had an adjusted R-squared of .75. 
-So far, the best model is the one based on the CHEST measurements.
+The adjusted r-squared fo this model (HEADLEN) is .85, which takes the throne so far as the highest.
+So far, the best model is the one based on the Head Length (HEADLEN) measurements.
 
 ```{r}
-new <- data.frame(CHEST=c(17,22,26))
-predict(chesty,new)
-predict(chesty,new,se.fit=TRUE)
+new <- data.frame(HEADLEN=c(17,22,26))
+predict(healdeny,new)
+predict(healdeny,new,se.fit=TRUE)
 ```
 
 
@@ -137,19 +118,19 @@ predict(chesty,new,se.fit=TRUE)
 
 
 ```{r}
-chesty <- lm(LENGTH~CHEST,data=bears)
-plot(LENGTH~CHEST,data=bears)
-abline(chesty)
-summary.lm(chesty)
+sexy <- lm(LENGTH~SEX,data=bears)
+plot(LENGTH~SEX,data=bears)
+abline(sexy)
+summary.lm(sexy)
 ```
 
-The adjusted r-squared fo this model (CHEST) is .79; the model for NECK had an adjusted R-squared of .75. 
-So far, the best model is the one based on the CHEST measurements.
+The adjusted r-squared fo this model (SEX) is -.01, meaning it has no correlation with length whatsoever.
+So far, the best model is the one based on the HEADLEN measurements.
 
 ```{r}
-new <- data.frame(CHEST=c(17,22,26))
-predict(chesty,new)
-predict(chesty,new,se.fit=TRUE)
+new <- data.frame(SEX=c(17,22,26))
+predict(sexy,new)
+predict(sexy,new,se.fit=TRUE)
 ```
 
 
@@ -159,19 +140,19 @@ predict(chesty,new,se.fit=TRUE)
 
 
 ```{r}
-chesty <- lm(LENGTH~CHEST,data=bears)
-plot(LENGTH~CHEST,data=bears)
-abline(chesty)
-summary.lm(chesty)
+monthy <- lm(LENGTH~MONTH,data=bears)
+plot(LENGTH~MONTH,data=bears)
+abline(monthy)
+summary.lm(monthy)
 ```
 
-The adjusted r-squared fo this model (CHEST) is .79; the model for NECK had an adjusted R-squared of .75. 
-So far, the best model is the one based on the CHEST measurements.
+The adjusted r-squared fo this model (MONTH) is .01, meaning this, just like the sex, has no correlation with length
+So far, the best model is the one based on the HEADLEN measurements.
 
 ```{r}
-new <- data.frame(CHEST=c(17,22,26))
-predict(chesty,new)
-predict(chesty,new,se.fit=TRUE)
+new <- data.frame(MONTH=c(17,22,26))
+predict(monthy,new)
+predict(monthy,new,se.fit=TRUE)
 ```
 
 
@@ -181,19 +162,21 @@ predict(chesty,new,se.fit=TRUE)
 
 
 ```{r}
-chesty <- lm(LENGTH~CHEST,data=bears)
-plot(LENGTH~CHEST,data=bears)
-abline(chesty)
-summary.lm(chesty)
+agey <- lm(LENGTH~AGE,data=bears)
+plot(LENGTH~AGE,data=bears)
+abline(agey)
+summary.lm(agey)
 ```
 
-The adjusted r-squared fo this model (CHEST) is .79; the model for NECK had an adjusted R-squared of .75. 
-So far, the best model is the one based on the CHEST measurements.
+The adjusted r-squared fo this model (AGE) is .5; the model for NECK had an adjusted R-squared of .75. 
+So far, the best model is the one based on the HEADLEN measurements.
 
 ```{r}
-new <- data.frame(CHEST=c(17,22,26))
-predict(chesty,new)
-predict(chesty,new,se.fit=TRUE)
+new <- data.frame(AGE=c(17,22,26))
+predict(agey,new)
+predict(agey,new,se.fit=TRUE)
 ```
 
 # RESULTS
+
+While the NECK had an adjusted R-squared value of .75, the HEADLEN measurement came out with a value of .85. The HEADLEN value has the most significant impact on overall length, while the MONTH and SEX have the lowest correlations.
