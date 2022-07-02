@@ -42,6 +42,7 @@ summary.lm(chesty)
 
 The adjusted r-squared fo this model (CHEST) is .79; the model for NECK had an adjusted R-squared of .75. 
 So far, the best model is the one based on the CHEST measurements.
+Month:
 
 ```{r}
 new <- data.frame(CHEST=c(17,22,26))
