@@ -33,8 +33,12 @@ predict(simp,new,se.fit=TRUE)
 ```
 ## Surely there is another variable that can better predict LENGTH than NECK. Find one and compare its performance to that of neck by it value of Adjusted-Rsquared (bigger is better).
 
-### CHEST
+# Results
 
+## Graphical and Numerical Descriptive Results  
+
+### CHEST  
+ 
 ```{r}
 chesty <- lm(LENGTH~CHEST,data=bears)
 plot(LENGTH~CHEST,data=bears)
@@ -43,7 +47,7 @@ summary.lm(chesty)
 ```
 
 The adjusted r-squared fo this model (CHEST) is .79; the model for NECK had an adjusted R-squared of .75. 
-So far, the best model is the one based on the CHEST measurements.
+So far, the best model is the one based on the CHEST measurements. The graph here seems to begin at 40cm length (y intercept), then makes a slow linear ascent through the data points.
 
 ```{r}
 new <- data.frame(CHEST=c(17,22,26))
@@ -63,7 +67,7 @@ summary.lm(weighty)
 ```
 
 The adjusted r-squared fo this model (WEIGHT) is .74, which is less than the .75 of neck.
-So far, the best model is the one based on the CHEST measurements.
+So far, the best model is the one based on the CHEST measurements. The graph here seems to begin at 45cm length (y intercept), then makes a slow linear ascent through the data points.
 
 ```{r}
 new <- data.frame(WEIGHT=c(17,22,26))
@@ -83,7 +87,7 @@ summary.lm(headwdthy)
 ```
 
 The adjusted r-squared fo this model (HEADWTH) is .73, less than .75 from the neck.
-So far, the best model is the one based on the CHEST measurements.
+So far, the best model is the one based on the CHEST measurements. The graph here seems to begin at 40cm length (y intercept), then makes a slow linear ascent through the data points up to 10cm headwth.
 
 ```{r}
 new <- data.frame(HEADWTH=c(17,22,26))
@@ -103,7 +107,7 @@ summary.lm(healdeny)
 ```
 
 The adjusted r-squared fo this model (HEADLEN) is .85, which takes the throne so far as the highest.
-So far, the best model is the one based on the Head Length (HEADLEN) measurements.
+So far, the best model is the one based on the Head Length (HEADLEN) measurements. The graph here seems to begin at 40cm length (y intercept), then makes a slow linear ascent through the data points up to 16cm headlen.
 
 ```{r}
 new <- data.frame(HEADLEN=c(17,22,26))
@@ -125,7 +129,7 @@ summary.lm(sexy)
 ```
 
 The adjusted r-squared fo this model (SEX) is -.01, meaning it has no correlation with length whatsoever.
-So far, the best model is the one based on the HEADLEN measurements.
+So far, the best model is the one based on the HEADLEN measurements. The graph here seems to begin at 60cm length (y intercept), then makes a slight linear decent , almost zero slope, through the data points down to 2.0.
 
 ```{r}
 new <- data.frame(SEX=c(17,22,26))
@@ -147,7 +151,7 @@ summary.lm(monthy)
 ```
 
 The adjusted r-squared fo this model (MONTH) is .01, meaning this, just like the sex, has no correlation with length
-So far, the best model is the one based on the HEADLEN measurements.
+So far, the best model is the one based on the HEADLEN measurements. The graph here seems to begin at 55cm length (y intercept), then makes a very slight linear ascent, almost zero slope, through the data points from January to December.
 
 ```{r}
 new <- data.frame(MONTH=c(17,22,26))
@@ -169,7 +173,7 @@ summary.lm(agey)
 ```
 
 The adjusted r-squared fo this model (AGE) is .5; the model for NECK had an adjusted R-squared of .75. 
-So far, the best model is the one based on the HEADLEN measurements.
+So far, the best model is the one based on the HEADLEN measurements. The graph here seems to begin at 50cm length (y intercept), then makes a somewhat rapid linear ascent through the data points up to the near 200 year old outlier.
 
 ```{r}
 new <- data.frame(AGE=c(17,22,26))
@@ -177,6 +181,8 @@ predict(agey,new)
 predict(agey,new,se.fit=TRUE)
 ```
 
-# RESULTS
+# Discussion and Conclusion
 
-While the NECK had an adjusted R-squared value of .75, the HEADLEN measurement came out with a value of .85. The HEADLEN value has the most significant impact on overall length, while the MONTH and SEX have the lowest correlations.
+While the NECK had an adjusted R-squared value of .75, the HEADLEN measurement came out with a value of .85. The HEADLEN value has the most significant impact on overall length, while the MONTH and SEX have the lowest correlations. The Graphs all have a line of best fir inserted with a y-intercept from 40-60. Most of the graphs have a slight positive linear slope; however, MONTH and SEX graphs both have a near-zero slope.
+
+
