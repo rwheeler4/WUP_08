@@ -184,5 +184,5 @@ predict(agey,new,se.fit=TRUE)
 # Discussion and Conclusion
 
 While the NECK had an adjusted R-squared value of .75, the HEADLEN measurement came out with a value of .85. The HEADLEN value has the most significant impact on overall length, while the MONTH and SEX have the lowest correlations. The Graphs all have a line of best fir inserted with a y-intercept from 40-60. Most of the graphs have a slight positive linear slope; however, MONTH and SEX graphs both have a near-zero slope.
-
+  
 
